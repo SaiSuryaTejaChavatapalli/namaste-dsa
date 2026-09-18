@@ -36,4 +36,14 @@ const merge = function (nums1, nums2) {
   return res;
 };
 
-console.log(merge([1, 3, 5, 7], [2, 4, 5, 8, 9]));
+function MergeSort(arr) {
+  if (arr.length <= 1) return arr;
+  let mid = Math.floor(arr.length / 2);
+
+  let left = MergeSort(arr.slice(0, mid));
+  let right = MergeSort(arr.slice(mid));
+
+  return merge(left, right);
+}
+
+console.log(MergeSort([8, 4, 5, 6, 9, 1, 3, 6]));
