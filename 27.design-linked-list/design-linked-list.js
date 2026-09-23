@@ -49,8 +49,8 @@ class MyLinkedList {
       }
       newNode.next = current.next;
       current.next = newNode;
+      this.size++;
     }
-    this.size++;
   }
 
   deleteAtIndex(index) {
